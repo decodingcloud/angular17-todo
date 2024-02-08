@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center mb-4">Add-To-Do</h1>
+            
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Add New Todo" [(ngModel)]="newTodo">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" (click)="addTodo()">Add</button>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <br/>
+    <br />
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center mb-4">To-Do-List</h1>
+            <ul class="list-group">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Task</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for (todo of todos; track todo){
+                    <tr scope="row">
+                        <td>{{todo}}</td>
+                        <td><button class="btn btn-danger btn-sm float-right" (click)="deleteTodo(todo)">Delete</button>
+                        </td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </ul>
+        </div>
+    </div>
+</div>
