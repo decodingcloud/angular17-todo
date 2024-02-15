@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TodoListComponent {
   newTodo: string = '';
-  todos: string[] = ['GO', 'WENT', 'GONE'];
+  todos: string[] = [];
 
   addTodo() {
     if (this.newTodo.trim() !== '') {
